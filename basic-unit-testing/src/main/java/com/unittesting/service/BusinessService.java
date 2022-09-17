@@ -11,8 +11,8 @@ public class BusinessService {
 		return Arrays.stream(num).reduce(0, Integer::sum);
 	}
 
-	int calculateSumByDataSerice() {
-		int[] data = dataService.retieveAllData();
+	int calculateSumByDataService() {
+		int[] data = dataService.retrieveAllData();
 		return Arrays.stream(data).reduce(0, Integer::sum);
 	}
 
