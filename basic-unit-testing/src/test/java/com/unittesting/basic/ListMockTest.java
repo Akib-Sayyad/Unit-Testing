@@ -70,7 +70,7 @@ public class ListMockTest {
 		mock.add("Dummy");
 
 		ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-		verify(mock).add(captor.capture());
+		verify(mock).add(captor.capture()); // capture the argument call on method ie. Dummy
 
 		assertEquals("Dummy", captor.getValue());
 	}
