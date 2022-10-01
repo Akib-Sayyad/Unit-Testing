@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(HelloController.class)
+@WebMvcTest(HelloController.class) // Define Class to Test
 public class HelloControllerTest {
 
 	@Autowired

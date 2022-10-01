@@ -8,12 +8,15 @@ import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.atMostOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -87,11 +90,50 @@ public class ListMockTest {
 
 		List<String> allValues = captor.getAllValues();
 		
-		System.out.println(allValues + " " + captor.capture());
+		System.out.println("captor value:" + allValues);
 		
 		assertEquals("Dummy1", allValues.get(0));
 		assertEquals("Dummy2", allValues.get(1));
 
 	}
+	// Mocking
+	@Test
+	@Ignore
+	public void mockTest() {
+		ArrayList<String> mock = mock(ArrayList.class);
+		System.out.println(mock.get(0)); // null
+		System.out.println(mock.size()); //0
+		mock.add("Dummy1");
+		System.out.println(mock.size()); //0
+		mock.add("Dummy2");
+		System.out.println(mock.get(0)); //null
+		System.out.println(mock.size()); //0
+		
+		when(mock.size()).thenReturn(5); // always return set value  
+		System.out.println(mock.size());//5
+		mock.add("Dummy3");
+		System.out.println(mock.size()); //5
+		System.out.println(mock.get(5)); // null
+	}
+
+	// Spying
+	@Test
+	public void spyTest() {
+		ArrayList<String> spy = spy(ArrayList.class);
+		// System.out.println(spy.get(0)); // IndexOutOfBoundException
+		System.out.println(spy.size()); // 0
+		spy.add("Dummy1");
+		System.out.println(spy.size()); // 1
+		spy.add("Dummy2");
+		System.out.println(spy.get(0)); // Dummy1
+		System.out.println(spy.size()); // 2
+
+		when(spy.size()).thenReturn(5); // always return set value
+		System.out.println(spy.size()); // 5
+		spy.add("Dummy3");
+		System.out.println(spy.size()); // 5
+		System.out.println(spy.get(5)); // Exception
+	}
+	
 
 }
