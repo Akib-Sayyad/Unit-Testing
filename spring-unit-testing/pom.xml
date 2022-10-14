@@ -32,6 +32,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!--java.lang.NoClassDefFoundError: org/skyscreamer/jsonassert/JSONAssert -->
+		<!-- https://mvnrepository.com/artifact/org.skyscreamer/jsonassert -->
+		<dependency>
+		    <groupId>org.skyscreamer</groupId>
+		    <artifactId>jsonassert</artifactId>
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
