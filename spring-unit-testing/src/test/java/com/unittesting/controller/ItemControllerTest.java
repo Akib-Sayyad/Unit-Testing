@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
@@ -35,4 +36,11 @@ public class ItemControllerTest {
 
 }
 
-// content().json() - can be matched with any formatting when strict = false
+// content().json() - can be matched with any formatting when strict = false (Deleting tag)
+
+// JSONAssert.assertEquals(expected, actual, strict);
+// default - false
+/*
+ * <groupId>org.skyscreamer</groupId> 
+ * <artifactId>jsonassert</artifactId>
+ */
