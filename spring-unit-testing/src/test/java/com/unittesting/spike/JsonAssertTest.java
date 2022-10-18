@@ -1,4 +1,4 @@
-package com.unittesting;
+package com.unittesting.spike;
 
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
@@ -28,3 +28,12 @@ public class JsonAssertTest {
 		JSONAssert.assertEquals(expected, actual, true);
 	}
 }
+
+//content().json() - can be matched with any formatting when strict = false (Deleting tag)
+
+//JSONAssert.assertEquals(expected, actual, strict);
+//default - false
+/*
+* <groupId>org.skyscreamer</groupId> 
+* <artifactId>jsonassert</artifactId>
+*/
