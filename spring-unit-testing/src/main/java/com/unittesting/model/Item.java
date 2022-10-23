@@ -13,7 +13,10 @@ public class Item {
 	double price;
 	
 	@Transient
-	private int value;
+	private double value;
+	
+	public Item() {
+	}
 	
 	public Item(int id, String name, int quantity, double price) {
 		this.id = id;
@@ -54,9 +57,18 @@ public class Item {
 		this.price = price;
 	}
 	
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double d) {
+		this.value = d;
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("Item[%d, %s, %d, %d]", id, name, quantity, price);
 	}
+
 
 }
